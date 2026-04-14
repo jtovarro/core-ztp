@@ -6,4 +6,4 @@ generatorOptions:
 resources:
 ### SNO1 DEPLOYMENT ###
   - sno1/resources.yaml
-  #- sno1/sno1.yaml
+  - sno1/sno1.yaml
