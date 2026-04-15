@@ -1,8 +1,8 @@
 apiVersion: siteconfig.open-cluster-management.io/v1alpha1
 kind: ClusterInstance
 metadata:
-  name: "sno1"
-  namespace: "sno1"
+  name: "sno1-jct"
+  namespace: "sno1-jct"
   annotations:
     argocd.argoproj.io/sync-wave: "10"
 spec:
@@ -15,7 +15,7 @@ spec:
     name: "pull-secret"
   clusterImageSetNameRef: "openshift-mirror"
   sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCE2WT3sHsRyLL0fgz5QaQF5y4QT7FSweru4bA/5P8vxDx1UR/phjxW0Rk+qWGkTnCA12845NAOB+v+uG8hcX+faKPnZRk/3YCFES9KYN/of0wzp0bdulsDodoAsYEuLGyxFkVQWyU/FIM5N2yG8iHNk93sNThGATFN6MB8F1perG81zUT9GGJja8Hmvqci8nQInYkT5uNAaKFhBqg3Um0UTJJu7RjUtWbbrIepPul/i/PhkyoRLc08IIonXHn07vY8CH/GRbrlM/CZ1ZGSc5NtjNYQPH6/VxMtq2Uga3OorlKKErm3UzVI968zETSJUI+PDrZAK+kfxJ2PvGKqN+ypVoXaIRkviWyU4WNNbsJmlqwTTu+bz9psdp6KBVLEqkm99DDGblgoJpHFFWxZyh7Z61cBzzCdNrYhkJ/9Testh4mAVHpkjpD6+ys8edw9qHCHiNQkPrjQysdSOKf/QQ6a9/yPkNf48Ptp9DjK5tVPZAlDHx7of9ixEi20Rmgaw7c="
-  clusterName: "sno1"
+  clusterName: "sno1-jct"
   networkType: "OVNKubernetes"
   clusterNetwork:
     - cidr: 10.128.0.0/14
@@ -40,7 +40,7 @@ spec:
   #   - name: extra-manifests-cm
 
   ########################################################
-  # Nodes in sno1
+  # Nodes in sno1-jct
   ########################################################
   nodes:
     - hostName: "sno1-jct"
