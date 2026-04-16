@@ -10,7 +10,7 @@ spec:
     # HoldInstallation will prevent installation from happening when true.
     # Inspection and validation will proceed as usual, but once the
     # RequirementsMet condition is true, installation will not begin until this field is set to false.
-  baseDomain: "jct-ocp4.gmbros.local"
+  baseDomain: "gmbros.local"
   pullSecretRef:
     name: "pull-secret"
   clusterImageSetNameRef: "openshift-mirror"
