@@ -5,4 +5,51 @@ metadata:
   name: "sno1-jct"
   annotations:
     argocd.argoproj.io/sync-wave: "0"
+---
+## This secret needs to be created empty
+## allowing VSS not running a conflict betweens owners,
+## as both BMH and VSS will clainm this secret.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bmc-secret
+  namespace: sno1-jct
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+type: Opaque
+---
+## Create is set to false as it was previosly created empty.
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultStaticSecret
+metadata:
+  name: vso-bmc-secret
+  namespace: sno1-jct
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  type: kv-v2 
+  mount: secret
+  path: webapp/bmc-secret
+  destination:
+    name: bmc-secret
+    create: false
+  refreshAfter: 30s
+  vaultAuthRef: vault-secrets-operator/vault-auth
+---
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultStaticSecret
+metadata:
+  name: vso-pull-secret
+  namespace: sno1-jct
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  type: kv-v2 
+  mount: secret
+  path: webapp/pull-secret
+  destination:
+    name: pull-secret
+    create: true
+  refreshAfter: 30s
+  vaultAuthRef: vault-secrets-operator/vault-auth
 
