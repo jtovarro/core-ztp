@@ -45,7 +45,7 @@ spec:
   nodes:
     - hostName: "sno1-jct"
       role: "master"
-      bmcAddress: "redfish-virtualmedia+http://10.12.0.210:8000/redfish/v1/Systems/sno1-jct"
+      bmcAddress: "redfish-virtualmedia+http://10.12.0.210:8000/redfish/v1/Systems/node00.sno1-jct.gmbros.local"
       bmcCredentialsName:
         name: "bmc-secret"
       bootMACAddress: "00:50:56:08:ce:ea"
