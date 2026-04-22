@@ -5,6 +5,7 @@ metadata:
   name: "core-baseline-v420-20260422"
 policyDefaults:
   namespace: "ztp-policy"
+  complianceType: "mustonlyhave"
   policySets: []
   placement:
     labelSelector:
@@ -14,7 +15,7 @@ policyDefaults:
   remediationAction: "inform"
 policies:
   # Core cluster OLM operators
-  - name: core-operator-subs-4.22
+  - name: core-operator-subs-4.20
     policyAnnotations:
       ran.openshift.io/ztp-deploy-wave: "5"
     manifests:   
