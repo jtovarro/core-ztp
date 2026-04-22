@@ -48,7 +48,7 @@ spec:
       bmcAddress: "redfish-virtualmedia+http://10.12.0.210:8000/redfish/v1/Systems/sno1-jct"
       bmcCredentialsName:
         name: "bmc-secret"
-      bootMACAddress: "00:50:56:0c:00:db"
+      bootMACAddress: "00:50:56:08:ce:ea"
       bootMode: "UEFI"
       templateRefs:
         - name: ai-node-templates-v1
@@ -58,7 +58,7 @@ spec:
       nodeNetwork:
         interfaces:
           - name: "ens192"
-            macAddress: "00:50:56:0c:00:db"
+            macAddress: "00:50:56:08:ce:ea"
         config:
           interfaces:
             - name: ens192
