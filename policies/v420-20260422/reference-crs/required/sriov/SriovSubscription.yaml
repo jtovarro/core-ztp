@@ -12,5 +12,3 @@ spec:
   source: redhat-operators
   sourceNamespace: openshift-marketplace
   installPlanApproval: '{{hub fromConfigMap "ztp-policy" "site-data" (printf "install-plan-approval") hub}}'
-status:
-  state: AtLatestKnown
