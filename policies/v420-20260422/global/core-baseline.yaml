@@ -1,0 +1,27 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: "core-baseline-v420-20260422"
+policyDefaults:
+  namespace: "ztp-policy"
+  policySets: []
+  placement:
+    labelSelector:
+      matchLabels:
+        ocp: "true"
+        config-version: "v420-20260422"
+  remediationAction: "inform"
+policies:
+  # Core cluster OLM operators
+  - name: core-operator-subs-4.22
+    policyAnnotations:
+      ran.openshift.io/ztp-deploy-wave: "5"
+    manifests:   
+      - path: reference-crs/required/sriov/SriovSubscriptionNS.yaml
+      - path: reference-crs/required/sriov/SriovSubscriptionOperGroup.yaml
+      - path: reference-crs/required/sriov/SriovSubscription.yaml
+        # patches:
+        # - spec:
+        #     installPlanApproval: Manual
+...

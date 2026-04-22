@@ -1,0 +1,26 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: "cnf-sno1-jct"
+policyDefaults:
+  namespace: "ztp-policy"
+  policySets: []
+  placement:
+    labelSelector:
+      matchLabels:
+        name: "sno1-jct"
+  remediationAction: "inform"
+policies:
+  # Base cluster configuration
+  - name: core-cluster-config-4.20
+    policyAnnotations:
+      ran.openshift.io/ztp-deploy-wave: "1"
+    manifests:
+      - path: reference-crs/required/other/operator-hub.yaml
+      - path: reference-crs/required/other/catalog-source.yaml
+        patches:
+        - spec:
+            image: registry.redhat.io/redhat/redhat-operator-index:v4.20
+      - path: reference-crs/required/scheduling/Scheduler.yaml
+

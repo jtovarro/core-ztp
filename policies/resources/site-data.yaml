@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: site-data
+  namespace: ztp-policy
+  annotations:
+    argocd.argoproj.io/sync-options: Replace=true
+data:
+  ########################################################
+  # Global vars
+  ########################################################
+  mgmt-name: jct-ocp4
+  mgmt-domain: gmbros.local
+  install-plan-approval: Manual
+
+  ########################################################
+  # SNO1-JCT vars
+  ########################################################
+  sno1-jct-clusterName: sno1-jct
+  sno1-jct-clusterDomain: gmbros.local
+

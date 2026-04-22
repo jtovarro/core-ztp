@@ -4,6 +4,6 @@ generatorOptions:
   disableNameSuffixHash: true
 
 resources:
-### SNO1 DEPLOYMENT ###
+  ### SNO1-JCT DEPLOYMENT ###
   - sno1/resources.yaml
   - sno1/sno1.yaml
