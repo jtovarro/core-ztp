@@ -32,7 +32,7 @@ spec:
   extraLabels:
     ManagedCluster:
       ocp: "true"
-      #config-version: "v420-20260422"
+      config-version: "v420-20260422"
   templateRefs: # https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.13/html-single/multicluster_engine_operator_with_red_hat_advanced_cluster_management/index#default-templates
     - name: ai-cluster-templates-v1
       namespace: open-cluster-management
