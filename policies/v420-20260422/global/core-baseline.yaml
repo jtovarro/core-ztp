@@ -5,7 +5,7 @@ metadata:
   name: "core-baseline-v420-20260422"
 policyDefaults:
   namespace: "ztp-policy"
-  complianceType: "mustonlyhave"
+  complianceType: "musthave"
   policySets: []
   placement:
     labelSelector:
