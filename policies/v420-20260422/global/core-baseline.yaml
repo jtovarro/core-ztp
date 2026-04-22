@@ -25,4 +25,9 @@ policies:
         # patches:
         # - spec:
         #     installPlanApproval: Manual
+
+      - path: reference-crs/required/scheduling/Scheduler.yaml
+        patches:
+        - spec:
+            mastersSchedulable: true
 ...
