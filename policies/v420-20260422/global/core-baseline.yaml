@@ -19,7 +19,7 @@ policies:
     policyAnnotations:
       ran.openshift.io/ztp-deploy-wave: "1"
     manifests:
-      - path: reference-crs/required/authentication/htpasswd-secret.yaml
+      - path: reference-crs/required/authentication/htpasswd.yaml
       - path: reference-crs/required/authentication/rbac.yaml
       - path: reference-crs/required/authentication/oauth.yaml
       
