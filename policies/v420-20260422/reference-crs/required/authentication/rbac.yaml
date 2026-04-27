@@ -11,3 +11,23 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: cluster-admins
+users:
+  - admin
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cluster-admins-global-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: Group
+    name: cluster-admins
+    apiGroup: rbac.authorization.k8s.io
