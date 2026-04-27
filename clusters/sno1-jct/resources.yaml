@@ -29,7 +29,7 @@ metadata:
 spec:
   type: kv-v2 
   mount: secret
-  path: webapp/bmc-secret
+  path: gmbros/sno1/bmc-secret
   destination:
     name: bmc-secret
     create: false
@@ -46,7 +46,7 @@ metadata:
 spec:
   type: kv-v2 
   mount: secret
-  path: webapp/pull-secret
+  path: gmbros/sno1/pull-secret
   destination:
     name: pull-secret
     create: true
