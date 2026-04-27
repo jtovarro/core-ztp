@@ -6,6 +6,7 @@ resources:
 - resources/managedclustersetbinding.yaml
 - resources/namespace.yaml
 - resources/site-data.yaml
+- resources/vss-site-secret.yaml
 - v420-20260422
 
 generators: []
