@@ -14,6 +14,15 @@ policyDefaults:
         config-version: "v420-20260422"
   remediationAction: "inform"
 policies:
+  # Core cluster authentication
+  - name: core-operator-auth-4.20
+    policyAnnotations:
+      ran.openshift.io/ztp-deploy-wave: "1"
+    manifests:
+      - path: reference-crs/required/authentication/htpasswd-secret.yaml
+      - path: reference-crs/required/authentication/rbac.yaml
+      - path: reference-crs/required/authentication/oauth.yaml
+      
   # Core cluster OLM operators
   - name: core-operator-subs-4.20
     policyAnnotations:
