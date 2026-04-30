@@ -8,6 +8,6 @@ resources:
 - resources/site-data.yaml
 - resources/vss-site-secret.yaml
 - v420-20260422
-- hub-upgrade
+- openshift-upgrade
 
 generators: []

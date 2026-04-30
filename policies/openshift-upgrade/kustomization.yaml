@@ -2,4 +2,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 generators:
   - hub-upgrade-v4-20-19.yaml
+  - spoke-upgrade-v4-20-19.yaml
   #- upgrade-admin-acks.yaml
