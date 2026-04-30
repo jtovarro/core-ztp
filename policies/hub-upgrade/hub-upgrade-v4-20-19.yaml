@@ -15,10 +15,6 @@ policyDefaults:
       matchLabels:
         name: local-cluster
 policies:
-  - name: platform-upgrade-argocd-application
-    manifests:
-      - path: reference-crs/hubUpgradeApplication.yaml
-
   - name: platform-upgrade-prep
     manifests:
       - path: reference-crs/ImageSignature.yaml
@@ -37,7 +33,7 @@ policies:
             spec:
               channel: "stable-4.21"
               desiredUpdate:
-                image: quay.io/openshift-release-dev/ocp-release:4.20.19-x86_64
+                image: quay.io/openshift-release-dev/ocp-release@sha256:e37bcdba07c7312607363ddf5a8e317e4b6952b1465704b38c9a081d095697be
                 version: 4.20.19
             status:
               history:
