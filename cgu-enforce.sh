@@ -3,7 +3,7 @@
 # Script to create a CGU with all the NonCompliant policies in a given cluster
 
 # Check if we're in mgmt1
-oc whoami --show-server |grep jct-ocp4 &>/dev/null
+oc whoami --show-server |grep hub &>/dev/null
 if [ $? -eq 1 ]; then
   echo "Log in Management cluster before running this script"
   exit
