@@ -15,14 +15,15 @@ policyDefaults:
       matchLabels:
         name: sno1-jct
 policies:
-  - name: spoke-platform-upgrade-prep
-    policyAnnotations:
-      ran.openshift.io/ztp-deploy-wave: "5"
-    manifests:
-      - path: reference-crs/ImageSignature.yaml
-        patches:
-          - binaryData:
-              sha256-e37bcdba07c7312607363ddf5a8e317e4b6952b1465704b38c9a081d095697be: owGbwMvMwMEoOU9/4l9n2UDG0wf6khgyHyk1VyslF2WWZCYn5ihZKVQrZeYmpqeCWSn5ydmpRbq5iXmZaanFJbopmelACiilVJyRaGRqZpVqbJ6UnJKUaGCebG5saGRmYG5sZpySkmaaaJFqbGieapJkZmlqlGRoYmZqbmCSZGyRbJloYGGYYmBpamZpnpSqVKujoFRSWQCyTimxJD83M1khOT+vJDEzL7VIoTgzPS+xpLQoVQmoKjMlNa8ks6QS2WFFqWmpRal5yWDthaWJlXqZ+fr5Bal5xRmZaSVA6ZzUxOJU3ZTUMv385AIY38pEz8hAz9BSt8LCLN7MRKkW5Ij8gpLM/DxoCCQXpQIdUwQyNSg1RcEjsUTBH2hqMMhUhWCgqzLz0hUcS0sy8oHhVqlgoAc0DmhMJ5MMCwMjBwMbKxMoWBm4OAVggX3RnP+v2JYJJ7baVU9KtX/9QPNYYXbYq+LL3bYrvz9d9WV2tmXcE1m1dtPYNexf/n6Mn7ThnuA2sS/Vq/uvnBDx5Wk4N2Gb5nKxDM15Gjc9ZnSZbE358i5Um7XS3PjEDYNLTJPbPxTscLmuyr2y2GhCfkdIJdf+DRoC5s4S7EvndPFpRi9pMFwddL/ndW9147LfL82vz3ns+GHr8a0qnKefNtkbB7tcUrEX5Zk0yWlDY1ieqUyQwXr+SX+8vDe9NMzRUJ2lN6d814GrQosb89/L3WiYt/e7UdVXWYZtHo8rr8w7dfb8+YTiK7Ec2xkfWDNIpUydWlcXljjLo6lz+RIGrds3t6Wf+xUVy71YvrmWkcfWsDL3uE2zRMzNrN73DdfUXrfvMt8rV3syrd2E6929TzESgh9ufXA7LOk4q+lTzG7Ns7UZN9hVf/MbSK6f9/famp15R9/vXz07Mzxm4xuzqCkblzTocARcTUn81uD697lfyYH8JQHtr3L4dQqUDuSVBE8/cvDot4cRpdwKGWUfK2L9le8ksR0RWHNpboibQzOf06dg90gV8dU7ll0y2fb04K55Ip+zVy+TXGvxrCWleeG6KJ7725j7XvraPC04+dT/4Zq9yzob/hzVOjzf7mwD459VW6zm7uxfe3bXtocftq9M9kmWeH45YXN9js2kfaIfJO20FKXYtCy/1e0WljR3n8X0SS6pdfqJdTXapZ1FAA==
+  # Disconnected upgrade
+  # - name: spoke-platform-upgrade-prep
+  #   policyAnnotations:
+  #     ran.openshift.io/ztp-deploy-wave: "5"
+  #   manifests:
+  #     - path: reference-crs/ImageSignature.yaml
+  #       patches:
+  #         - binaryData:
+  #             sha256-e37bcdba07c7312607363ddf5a8e317e4b6952b1465704b38c9a081d095697be: owGbwMvMwMEoOU9/4l9n2UDG0wf6khgyHyk1VyslF2WWZCYn5ihZKVQrZeYmpqeCWSn5ydmpRbq5iXmZaanFJbopmelACiilVJyRaGRqZpVqbJ6UnJKUaGCebG5saGRmYG5sZpySkmaaaJFqbGieapJkZmlqlGRoYmZqbmCSZGyRbJloYGGYYmBpamZpnpSqVKujoFRSWQCyTimxJD83M1khOT+vJDEzL7VIoTgzPS+xpLQoVQmoKjMlNa8ks6QS2WFFqWmpRal5yWDthaWJlXqZ+fr5Bal5xRmZaSVA6ZzUxOJU3ZTUMv385AIY38pEz8hAz9BSt8LCLN7MRKkW5Ij8gpLM/DxoCCQXpQIdUwQyNSg1RcEjsUTBH2hqMMhUhWCgqzLz0hUcS0sy8oHhVqlgoAc0DmhMJ5MMCwMjBwMbKxMoWBm4OAVggX3RnP+v2JYJJ7baVU9KtX/9QPNYYXbYq+LL3bYrvz9d9WV2tmXcE1m1dtPYNexf/n6Mn7ThnuA2sS/Vq/uvnBDx5Wk4N2Gb5nKxDM15Gjc9ZnSZbE358i5Um7XS3PjEDYNLTJPbPxTscLmuyr2y2GhCfkdIJdf+DRoC5s4S7EvndPFpRi9pMFwddL/ndW9147LfL82vz3ns+GHr8a0qnKefNtkbB7tcUrEX5Zk0yWlDY1ieqUyQwXr+SX+8vDe9NMzRUJ2lN6d814GrQosb89/L3WiYt/e7UdVXWYZtHo8rr8w7dfb8+YTiK7Ec2xkfWDNIpUydWlcXljjLo6lz+RIGrds3t6Wf+xUVy71YvrmWkcfWsDL3uE2zRMzNrN73DdfUXrfvMt8rV3syrd2E6929TzESgh9ufXA7LOk4q+lTzG7Ns7UZN9hVf/MbSK6f9/famp15R9/vXz07Mzxm4xuzqCkblzTocARcTUn81uD697lfyYH8JQHtr3L4dQqUDuSVBE8/cvDot4cRpdwKGWUfK2L9le8ksR0RWHNpboibQzOf06dg90gV8dU7ll0y2fb04K55Ip+zVy+TXGvxrCWleeG6KJ7725j7XvraPC04+dT/4Zq9yzob/hzVOjzf7mwD459VW6zm7uxfe3bXtocftq9M9kmWeH45YXN9js2kfaIfJO20FKXYtCy/1e0WljR3n8X0SS6pdfqJdTXapZ1FAA==
   
   - name: spoke-upgrade-420
     policyAnnotations:
