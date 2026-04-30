@@ -6,7 +6,7 @@ metadata:
 placementBindingDefaults:
   name: hub-upgrade-v4-20-19-placement-binding
 policyDefaults:
-  namespace: ztp-policies
+  namespace: ztp-policy
   remediationAction: inform
   consolidateManifests: true
   placement:
