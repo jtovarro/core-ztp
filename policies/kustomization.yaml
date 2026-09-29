@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
 - resources/global-required/managedclustersetbinding.yaml
 - resources/global-required/namespace.yaml
+- resources/global-required/site-data-common.yaml
 - resources/sno1-jct/site-data-sno1-jct.yaml
 - resources/sno1-jct/site-secret-sno1-jct.yaml
 - v420-20260422
