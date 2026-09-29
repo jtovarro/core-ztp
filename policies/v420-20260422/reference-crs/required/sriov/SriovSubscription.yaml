@@ -11,6 +11,6 @@ spec:
   name: sriov-network-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  installPlanApproval: '{{hub fromConfigMap "ztp-policy" (printf "site-data-common" .ManagedClusterName) "install-plan-approval" hub}}'
+  installPlanApproval: '{{hub fromConfigMap "ztp-policy" "site-data-common" "install-plan-approval" hub}}'
 status:
   state: AtLatestKnown
