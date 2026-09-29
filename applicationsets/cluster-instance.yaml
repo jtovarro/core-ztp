@@ -1,0 +1,49 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-instance
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"
+spec:
+  goTemplate: true
+  goTemplateOptions:
+    - missingkey=error
+
+  generators:
+    - git:
+        repoURL: https://github.com/jtovarro/core-ztp.git
+        revision: main
+        directories:
+          - path: clusters/*
+
+  template:
+    metadata:
+      name: 'ci-{{ .path.basename }}'
+      labels:
+        ztp.gmbros.io/domain: ci
+        ztp.gmbros.io/application-type: cluster-instance
+        ztp.gmbros.io/cluster: '{{ .path.basename }}'
+    spec:
+      project: ztp-app-project
+
+      source:
+        repoURL: https://github.com/jtovarro/core-ztp.git
+        targetRevision: main
+        path: '{{ .path.path }}'
+
+      ignoreDifferences: # recommended way to allow ACM controller to manage its fields. alternative approach documented below (1)
+        - group: cluster.open-cluster-management.io
+          kind: ManagedCluster
+          managedFieldsManagers:
+            - controller
+
+      destination:
+        server: https://kubernetes.default.svc
+
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+          - PrunePropagationPolicy=background
+          - RespectIgnoreDifferences=true
