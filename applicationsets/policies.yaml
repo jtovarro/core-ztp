@@ -1,0 +1,42 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: policies
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"
+spec:
+  goTemplate: true
+  goTemplateOptions:
+    - missingkey=error
+
+  generators:
+    - git:
+        repoURL: https://github.com/jtovarro/core-ztp.git
+        revision: main
+        directories:
+          - path: policies/*
+
+  template:
+    metadata:
+      name: 'policies-{{ .path.basename }}'
+      labels:
+        ztp.gmbros.io/domain: policy
+        ztp.gmbros.io/application-type: policy
+        ztp.gmbros.io/cluster: '{{ .path.basename }}'
+    spec:
+      project: policy-app-project
+
+      source:
+        repoURL: https://github.com/jtovarro/core-ztp.git
+        targetRevision: main
+        path: '{{ .path.path }}'
+
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: openshift-gitops
+
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
