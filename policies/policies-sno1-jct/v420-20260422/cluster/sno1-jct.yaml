@@ -17,10 +17,7 @@ policies:
     policyAnnotations:
       ran.openshift.io/ztp-deploy-wave: "1"
     manifests:
-      # - path: reference-crs/required/other/operator-hub.yaml
-      # - path: reference-crs/required/other/catalog-source.yaml
-      #   patches:
-      #   - spec:
-      #       image: registry.redhat.io/redhat/redhat-operator-index:v4.20
       - path: reference-crs/required/scheduling/Scheduler.yaml
-
+        patches:
+        - spec:
+            mastersSchedulable: true

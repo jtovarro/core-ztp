@@ -20,7 +20,7 @@ spec:
 
   template:
     metadata:
-      name: 'policies-{{ .path.basename }}'
+      name: '{{ .path.basename }}'
       labels:
         ztp.gmbros.io/domain: policy
         ztp.gmbros.io/application-type: policy
