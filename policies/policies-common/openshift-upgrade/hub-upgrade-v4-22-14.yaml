@@ -14,7 +14,7 @@ policyDefaults:
     labelSelector:
       matchLabels:
         name: local-cluster
-        ocp-update: true
+        ocp-update: "true"
 policies:
   # Disconnected upgrade
   # - name: hub-platform-upgrade-prep
