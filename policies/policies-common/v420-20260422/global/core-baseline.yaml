@@ -10,8 +10,7 @@ policyDefaults:
   placement:
     labelSelector:
       matchLabels:
-        ocp: "true"
-        config-version: "v420-20260422"
+        config-version-common: "v420-20260422"
   remediationAction: "inform"
 policies:
   # Core cluster authentication
