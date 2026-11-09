@@ -1,0 +1,24 @@
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: "cnf-sno1-jct"
+policyDefaults:
+  namespace: "ztp-policy"
+  policySets: []
+  placement:
+    labelSelector:
+      matchLabels:
+        name: "sno1-jct"
+        config-version-common: "v50-20261109"
+  remediationAction: "inform"
+policies:
+  # Custom cluster configuration
+  - name: cnf-sno1-jct-config
+    policyAnnotations:
+      ran.openshift.io/ztp-deploy-wave: "1"
+    manifests:
+      - path: reference-crs/required/scheduling/Scheduler.yaml
+        patches:
+        - spec:
+            mastersSchedulable: true

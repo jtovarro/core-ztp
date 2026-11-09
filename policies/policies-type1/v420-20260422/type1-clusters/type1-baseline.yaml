@@ -14,7 +14,7 @@ policyDefaults:
   remediationAction: "inform"
 policies:
   # type1 cluster OLM operators
-  - name: type1-operator-subs-4.20
+  - name: type1-operator-subs-v4.20
     policyAnnotations:
       ran.openshift.io/ztp-deploy-wave: "5"
     manifests:   

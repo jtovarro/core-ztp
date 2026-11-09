@@ -6,5 +6,6 @@ resources:
 - resources/site-data-sno1-jct.yaml
 - resources/site-secret-sno1-jct.yaml
 - v420-20260422
+- v50-20261109
 
 generators: []

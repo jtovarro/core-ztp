@@ -4,5 +4,6 @@ kind: Kustomization
 
 resources:
 - v420-20260422
+- v50-20261109
 
 generators: []

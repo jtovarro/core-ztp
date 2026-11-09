@@ -1,6 +1,7 @@
 ---
 apiVersion: v1
 data:
+  ## Change the value of the following keys to "true" to acknowledge the update gates defined in the admin-gates ConfigMap in the openshift-config-managed namespace.
   ack-4.15-kube-1.29-api-removals-in-4.16": "true"
 kind: ConfigMap
 metadata:

@@ -10,10 +10,11 @@ policyDefaults:
     labelSelector:
       matchLabels:
         name: "sno1-jct"
+        config-version-common: "v420-20260422"
   remediationAction: "inform"
 policies:
   # Custom cluster configuration
-  - name: cnf-sno1-jct-config-4.20
+  - name: cnf-sno1-jct-config
     policyAnnotations:
       ran.openshift.io/ztp-deploy-wave: "1"
     manifests:

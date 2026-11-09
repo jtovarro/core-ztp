@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: release-image-4-20-19
+  name: release-image-signatures
   namespace: openshift-config-managed
   labels:
     release.openshift.io/verification-signatures: ""
