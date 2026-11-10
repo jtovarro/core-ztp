@@ -14,7 +14,7 @@ policyDefaults:
   remediationAction: "inform"
 policies:
   # Custom cluster configuration
-  - name: cnf-sno1-jct-config
+  - name: cnf-sno1-jct-config-v420-20260422
     policyAnnotations:
       ran.openshift.io/ztp-deploy-wave: "1"
     manifests:
