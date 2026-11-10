@@ -14,7 +14,7 @@ policyDefaults:
   remediationAction: "inform"
 policies:
   # Core cluster authentication
-  - name: core-operator-auth
+  - name: core-operator-auth-v50-20261109
     policyAnnotations:
       ran.openshift.io/ztp-deploy-wave: "1"
     manifests:
