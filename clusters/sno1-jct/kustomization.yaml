@@ -6,4 +6,4 @@ generatorOptions:
 resources:
   ### SNO1-JCT DEPLOYMENT ###
   - resources.yaml
-  - sno1-jct.yaml
+  #- sno1-jct.yaml
